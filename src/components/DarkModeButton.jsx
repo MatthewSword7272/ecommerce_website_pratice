@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react"
+import {useEffect, useState} from "react"
 import LightPng from "../assets/website/light-mode-button.png"
 import DarkPng from "../assets/website/dark-mode-button.png"
 
-export function DarkModeButton({}) {
+export function DarkModeButton() {
     const [isDark, setIsDark] = useState(() => {
         return localStorage.getItem("theme") === "dark"
     })
@@ -11,6 +11,14 @@ export function DarkModeButton({}) {
 
     const handleDarkMode = () => setIsDark(!isDark)
 
+    /*
+    This is a common pattern for implementing
+    dark mode in React applications.
+    The classList manipulation allows for CSS styling changes,
+    while localStorage persistence ensures the user's theme preference is remembered across page reloads.
+
+    this ensures that the state changes and side effects are properly synchronized and handled in the correct order.
+    */
     useEffect(() => {
         if (isDark) {
             element.classList.add("dark")
@@ -19,6 +27,7 @@ export function DarkModeButton({}) {
             element.classList.remove("dark")
             localStorage.setItem("theme", "light")
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isDark])
 
     return (
