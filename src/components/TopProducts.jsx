@@ -30,7 +30,7 @@ const ProductsData = [
 
 const TopProducts = () => {
     return (
-        <div>
+        <div className={" "}>
             <div className={"container mx-auto"}>
                 {/* Header section */}
                 <SectionHeader

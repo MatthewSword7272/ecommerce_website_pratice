@@ -53,7 +53,7 @@ const ProductsData = [
 
 const Products = () => {
     return (
-        <div className={"mt-14 mb-12"}>
+        <div className={"pt-14 pb-12"}>
             <div className={`container mx-auto`}>
                 {/* Header section  */}
                 <SectionHeader

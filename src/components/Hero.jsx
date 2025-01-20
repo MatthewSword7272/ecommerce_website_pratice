@@ -49,7 +49,7 @@ const settings = {
 const Hero = () => {
     return (
         <div
-            className={`relative overflow-hidden min-h-[34.375rem] sm:min-h-[40.625rem] bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200`}
+            className={`relative overflow-hidden min-h-[34.375rem] sm:min-h-[40.625rem]  flex justify-center items-center `}
         >
             {/* background pattern */}
             <div

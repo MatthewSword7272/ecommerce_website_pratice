@@ -25,10 +25,7 @@ const MenuItems = [
 
 const NavBar = () => {
     return (
-        <div
-            className={`shadow-md bg-white
-        dark:bg-gray-900 dark:text-white relative z-40 duration-300`}
-        >
+        <div className={`shadow-md relative z-40`}>
             {/* upper Navbar */}
             <div className={"bg-primary/40 py-2 "}>
                 <div className={"container mx-auto flex justify-between items-center "}>
