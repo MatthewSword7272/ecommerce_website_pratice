@@ -1,9 +1,11 @@
+import {SectionHeader} from "./SectionHeader"
 import {ProductCard} from "./ProductCard"
 import Img1 from "../assets/women/women.png"
 import Img2 from "../assets/women/women2.jpg"
 import Img3 from "../assets/women/women3.jpg"
 import Img4 from "../assets/women/women4.jpg"
 import {motion} from "motion/react"
+import Button from "./Button"
 
 // Dummy Data
 const ProductsData = [
@@ -52,20 +54,13 @@ const ProductsData = [
 const Products = () => {
     return (
         <div className={"mt-14 mb-12"}>
-            <div className={`container`}>
+            <div className={`container mx-auto`}>
                 {/* Header section  */}
-                <motion.div
-                    initial={{opacity: 0, y: 140}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{duration: 0.8, ease: "easeIn"}}
-                    className={`text-center mb-10 max-w-[37.5rem] mx-auto`}
-                >
-                    <p className={`text-sm text-primary`}>Top Selling Products for you</p>
-                    <h1 className={`text-3xl`}>Products</h1>
-                    <p className={"text-xs text-gray-400"}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    </p>
-                </motion.div>
+                <SectionHeader
+                    title={"Products"}
+                    topDescription={"Top Selling Products for you"}
+                    bottomDescription={"Lorem ipsum dolor sit amet consectetur, adipisicing elit."}
+                />
                 {/* Body Section */}
                 <div>
                     <div
@@ -84,6 +79,9 @@ const Products = () => {
                                 <ProductCard {...item} />
                             </motion.div>
                         ))}
+                    </div>
+                    <div className={"flex justify-center mt-10"}>
+                        <Button className={"rounded-md !py-1 !px-5"}>View All Button</Button>
                     </div>
                 </div>
             </div>

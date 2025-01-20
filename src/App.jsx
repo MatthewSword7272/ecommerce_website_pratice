@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Products from "./components/Products"
+import TopProducts from "./components/TopProducts"
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
             <NavBar />
             <Hero />
             <Products />
+            <TopProducts />
         </div>
     )
 }
