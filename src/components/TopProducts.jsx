@@ -1,9 +1,8 @@
+import {TopProductCard} from "./TopProductCard"
 import {SectionHeader} from "./SectionHeader"
 import Img1 from "../assets/shirt/shirt.png"
 import Img2 from "../assets/shirt/shirt2.png"
 import Img3 from "../assets/shirt/shirt3.png"
-import {FaStar} from "react-icons/fa6"
-import Button from "./Button"
 
 const ProductsData = [
     {
@@ -43,39 +42,13 @@ const TopProducts = () => {
                     }
                 />
                 {/* body Section */}
-                <div className={"flex justify-between max-md:flex-col mt-24"}>
+                <div
+                    className={
+                        "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-3"
+                    }
+                >
                     {ProductsData.map((product) => (
-                        <div
-                            key={product.id}
-                            className={`rounded-2xl bg-white dark:bg-gray-800 hover:black-black/80 dark:hover:bg-primary hover:bg-gray-800 hover:text-white relative shadow-xl duration-300 group max-w-[18.75rem]`}
-                        >
-                            <div className={`h-[6.25rem]`}>
-                                <img
-                                    src={product.img}
-                                    alt={product.title}
-                                    className={
-                                        "max-w-[8.75rem] transform -translate-y-20 translate-x-1/2 group-hover:scale-105 duration-300 drop-shadow-md"
-                                    }
-                                />
-                            </div>
-                            <div className={`p-4 text-center space-y-2`}>
-                                <div className={`flex justify-center gap-1`}>
-                                    <FaStar className={"text-yellow-500"} />
-                                    <FaStar className={"text-yellow-500"} />
-                                    <FaStar className={"text-yellow-500"} />
-                                    <FaStar className={"text-yellow-500"} />
-                                </div>
-                                <h1 className={`text-xl`}>{product.title}</h1>
-                                <p
-                                    className={`text-gray-500 group-hover:text-white duration-300 line-clamp-2`}
-                                >
-                                    {product.description}
-                                </p>
-                                <Button groupHover className={"!py-1 !px-4 mx-auto"}>
-                                    Order More
-                                </Button>
-                            </div>
-                        </div>
+                        <TopProductCard key={product.id} {...product} />
                     ))}
                 </div>
             </div>
