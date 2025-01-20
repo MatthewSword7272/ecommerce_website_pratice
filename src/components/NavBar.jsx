@@ -1,7 +1,9 @@
+import {DropDownItem} from "./DropDownItem"
 import {DarkModeButton} from "./DarkModeButton"
 import {IoMdSearch} from "react-icons/io"
 import Logo from "../assets/logo.png"
-import {FaCaretDown, FaCartShopping} from "react-icons/fa6"
+import {FaCartShopping} from "react-icons/fa6"
+import {motion} from "motion/react"
 import Button from "./Button"
 
 const MenuItems = [
@@ -64,7 +66,16 @@ const NavBar = () => {
                 </div>
             </div>
             {/* lower navbar */}
-            <div className={`flex justify-center py-2`}>
+            <motion.div
+                initial={{scale: 0.3, opacity: 0}}
+                animate={{scale: 1, opacity: 1}}
+                transition={{
+                    duration: 0.8,
+                    ease: "easeIn",
+                    delay: 0.1,
+                }}
+                className={`flex justify-center py-2`}
+            >
                 <ul className={`sm:flex hidden items-center gap-4`}>
                     {MenuItems.map((item) =>
                         item.link ? (
@@ -78,37 +89,11 @@ const NavBar = () => {
                             </li>
                         ) : (
                             // dropdown menu
-                            <li
-                                key={item.id}
-                                className={`flex flex-col relative group items-center gap-1 hover:text-primary duration-200`}
-                            >
-                                <span className={`flex items-center gap-1`}>
-                                    {item.name}
-                                    <FaCaretDown
-                                        className={"duration-200 group-hover:rotate-180"}
-                                    />
-                                </span>
-                                <div
-                                    className={`rounded-md shadow-md absolute top-6 z-50 hidden group-hover:block w-36 text-black bg-white p-2 `}
-                                >
-                                    <ul>
-                                        {item.dropdowns.map((dropdown, index) => (
-                                            <li key={index}>
-                                                <a
-                                                    href={dropdown.link}
-                                                    className={`inline-block w-full rounded-md p-2 hover:bg-primary/20 `}
-                                                >
-                                                    {dropdown.name}
-                                                </a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </li>
+                            <DropDownItem item={item} key={item.id} />
                         )
                     )}
                 </ul>
-            </div>
+            </motion.div>
         </div>
     )
 }

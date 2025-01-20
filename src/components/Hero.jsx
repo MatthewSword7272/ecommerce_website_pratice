@@ -1,8 +1,10 @@
+import {HeroSlide} from "./HeroSlide"
 import Slider from "react-slick"
 import Image1 from "../assets/hero/sale.png"
 import Image2 from "../assets/hero/shopping.png"
 import Image3 from "../assets/hero/women.png"
-import Button from "./Button"
+import {Fragment} from "react"
+import {motion} from "motion/react"
 
 const imageList = [
     {
@@ -56,33 +58,16 @@ const Hero = () => {
             {/* hero section */}
             <div className={"container pb-8 sm:pb-0 z-10"}>
                 <Slider {...settings}>
-                    {imageList.map((item) => (
-                        <div className={"!grid grid-cols-1 sm:grid-cols-2"} key={item.id}>
+                    {imageList.map((item, index) => (
+                        <Fragment key={index}>
                             {/* Text Content Section */}
-                            <div
-                                className={
-                                    "flex flex-col justify-center max-md:items-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative"
-                                }
-                            >
-                                <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-bold`}>
-                                    {item.title}
-                                </h1>
-                                <p className={"text-sm"}>{item.description}</p>
-                                <div>
-                                    <Button className={"hover:scale-105"}>Order Now</Button>
-                                </div>
-                            </div>
-                            {/* image Section */}
-                            <div className={"order-1 sm:order-2"}>
-                                <img
-                                    src={item.img}
-                                    alt="image1"
-                                    className={
-                                        "size-[18.75rem] sm:size-[28.125rem] sm:scale-105 xl:scale-125 object-contain mx-auto"
-                                    }
-                                />
-                            </div>
-                        </div>
+                            <HeroSlide
+                                title={item.title}
+                                description={item.description}
+                                img={item.img}
+                                index={index}
+                            />
+                        </Fragment>
                     ))}
                 </Slider>
             </div>
