@@ -27,7 +27,7 @@ export function TopProductCard({...props}) {
                 <p className={`text-gray-500 group-hover:text-white duration-300 line-clamp-2`}>
                     {description}
                 </p>
-                <Button groupHover className={"!py-1 !px-4 mx-auto"}>
+                <Button groupHover className={"py-1! px-4! mx-auto"}>
                     Order More
                 </Button>
             </div>

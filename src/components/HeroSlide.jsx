@@ -3,7 +3,7 @@ import {motion} from "motion/react"
 
 export function HeroSlide({title, description, img}) {
     return (
-        <div className={"!grid grid-cols-1 sm:grid-cols-2"}>
+        <div className={"grid! grid-cols-1 sm:grid-cols-2"}>
             <div
                 className={
                     "flex flex-col justify-center max-md:items-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative"

@@ -43,7 +43,7 @@ const NavBar = () => {
                                 placeholder={"Search"}
                                 className={`w-[12.5rem] group-hover:w-[18.75rem] duration-200 transition-all
                                     rounded-full border border-gray-300 px-2 py-1
-                                    focus:outline-none focus:border-primary `}
+                                    focus:outline-hidden focus:border-primary `}
                             />
                             <IoMdSearch
                                 className={`text-gray-500 group-hover:text-primary duration-200 transition-colors
@@ -51,11 +51,11 @@ const NavBar = () => {
                             />
                         </div>
                         <Button
-                            className={"!py-1 !px-4 scale-100 gap-3"}
+                            className={"py-1! px-4! scale-100 gap-3"}
                             onClick={() => alert("Ordering is not available yet")}
                         >
                             <span className={`group-hover:block hidden`}>Order</span>
-                            <FaCartShopping className={`text-xl drop-shadow-sm`} />
+                            <FaCartShopping className={`text-xl drop-shadow-xs`} />
                         </Button>
                         {/* DarkMode Switch */}
                         <DarkModeButton />

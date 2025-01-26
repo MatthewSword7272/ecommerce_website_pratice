@@ -81,7 +81,7 @@ const Products = () => {
                         ))}
                     </div>
                     <div className={"flex justify-center mt-10"}>
-                        <Button className={"rounded-md !py-1 !px-5"}>View All Button</Button>
+                        <Button className={"rounded-md py-1! px-5!"}>View All Button</Button>
                     </div>
                 </div>
             </div>

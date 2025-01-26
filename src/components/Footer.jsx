@@ -37,16 +37,16 @@ const Footer = () => {
             <div className={"container mx-auto"}>
                 <div className={"grid md:grid-cols-3 pb-48 pt-10 gap-5"}>
                     <div className={" "}>
-                        <h1 className={"sm:text-3xl text-xl mb-3 flex items-center gap-3"}>
+                        <h1 className={"sm:text-3xl text-xl mb-3 flex items-center gap-3 text-gray-200"}>
                             <img src={footerLogo} className={"max-w-[3.125rem]"} alt="" />
                             Shopsy
                         </h1>
-                        <p>
+                        <p className={'text-gray-200'}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in beatae
                             ea recusandae blanditiis veritatis.
                         </p>
                     </div>
-                    <div className={"grid grid-cols-2 col-span-2 sm:grid-cols-3 md:pl-10"}>
+                    <div className={"grid grid-cols-2 col-span-2 sm:grid-cols-3 md:pl-10 text-gray-200"}>
                         <div className={"  "}>
                             <h3 className={"font-bold text-xl mb-4"}>Important Links</h3>
                             <ul className={"space-y-3"}>
